@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="starter-template">
+
+    <div class="row span4 offset4"><h1>Log in</h1></div>
+
+    <div class="row span4 offset4">
+        <form action="/login/" method="POST"> {% csrf_token %}
+            {{ form }}
+            <br/><input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="row span4 offset4">
+        {% if flash %}
+            <br/><p class="alert alert-danger">{{ flash }}</p>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}

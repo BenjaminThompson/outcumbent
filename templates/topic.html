@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block headerjs %}
+    <script src="/static/js/topic.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row-fluid">
+    <div class="span6 offset3 well">
+        <form method="post" action="/topic/">{% csrf_token %}
+            <div class="control-label">URL</div><input type="text" id="frm_topic_url" name="url" class="input-xlarge" />
+            <div class="control-label">Your Remarks</div><textarea name="remarks" id="frm_topic_remarks" rows="5" class="input-xxlarge">My thoughts on this are...</textarea>
+            <div class="control-label">Your Vote</div>
+                <input type="radio" value="approve" name="vote">Approve<br/>
+                <input type="radio" value="disapprove" name="vote">Disapprove<br/>
+                <input type="radio" value="complicated" name="vote">It's Complicated<br/>
+                <input type="submit" class="btn" value="Submit">
+
+        </form>
+    </div>
+    </div>
+
+{% endblock %}
