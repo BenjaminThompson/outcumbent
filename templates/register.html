@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="starter-template">
-<h1>Register New User</h1>
-<p>Put the registration form here</p>
+
+
+<div class="span5 offset1">
+<h1>Register</h1><hr/>
+<form action="/register/" method="POST"> {% csrf_token %}
     {{ form }}
+    <br/>Email:<br/><input type="text" name="email" value="optional, for password retrieval"/><br/>
+    <div class="well"><h3>I am a...</h3>
+    {% for tag in tags %}
+        <input type="checkbox"
+               class="checkbox"
+               name="tags"
+               value="{{ tag }}"/>
+        <label class="label">{{ tag }}</label><br/>
+    {% endfor %}
     </div>
+    <br/><input type="submit" value="Submit" class="btn" />
+</form>
+</div>
+    {{ qdict }}
 {% endblock %}

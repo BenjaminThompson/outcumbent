@@ -8,8 +8,9 @@
     <div class="row span4 offset4">
         <form action="/login/" method="POST"> {% csrf_token %}
             {{ form }}
-            <br/><input type="submit" value="Login">
+            <br/><input type="submit" value="Login"/>
         </form>
+        <a href="/register/">Or Register a new account.</a>
     </div>
     <div class="row span4 offset4">
         {% if flash %}

@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'outcumbent.views.logoutpage'),
     url(r'^topic/$', 'outcumbent.views.topic'),
     url(r'^profile/$', 'outcumbent.views.profile'),
+    url(r'^register/$', 'outcumbent.views.register'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
