@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 
 class Tag(models.Model):
-    text = models.TextField(max_length=128, unique=True)
+    text = models.TextField(max_length=128)
 
     def __unicode__(self):
         return '%s' % (self.text)

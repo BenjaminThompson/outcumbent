@@ -83,6 +83,13 @@ def register(request):
     if request.method=="POST":
         try:
             user = form.save(commit=True)
+            username = request.POST['username']
+            password = request.POST['password1']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('/', context_instance=RequestContext(request))
 
         except Exception as exc:
             pass
